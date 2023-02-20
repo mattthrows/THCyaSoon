@@ -47,7 +47,7 @@ function SearchScreen(props) {
           searchRef={searchRef}
           onSearch={text => onSearch(text)}
           onChangeText={text => onSearch(text)}
-          placeholder="Search for cuisines"
+          placeholder="Search for products"
           searchContainerStyle={styles.searchContainer}
           onSearchBarCancel={text => {
             searchRef.current.clearText()
