@@ -10,7 +10,7 @@ export const ConfigProvider = ({ children }) => {
   const { theme } = useTheme()
   const { localized } = useTranslations()
   const config = {
-    isMultiVendorEnabled: false,
+    isMultiVendorEnabled: true,
     isSMSAuthEnabled: true,
     isGoogleAuthEnabled: true,
     isAppleAuthEnabled: true,
@@ -21,14 +21,14 @@ export const ConfigProvider = ({ children }) => {
     isDelayedLoginEnabled: false,
     webClientId:
       '525472070731-mg8m3q8v9vp1port7nkbq9le65hp917t.apps.googleusercontent.com',
-    googleAPIKey: 'AIzaSyA4Bt3Mt6H-JC9beq910oaKm1Jl8yLNiu0', // This is used for fetching Google Maps data, such as geocoding data, reverse geocoding, directions, maps, etc.
+    googleAPIKey: 'AIzaSyDfWk1qHz1a_yrAv9fFB-WpZg4sg1VtlwQ', // This is used for fetching Google Maps data, such as geocoding data, reverse geocoding, directions, maps, etc.
     currencyCode: 'usd',
     tables: {
-      vendorsTableName: 'vendors',
+      vendorsTableName: 'restaurants',
       vendorOrdersTableName: 'restaurant_orders',
       vendorDeliveriesTableName: 'restaurant_deliveries',
       vendorReviewsTableName: 'vendor_reviews',
-      vendorProductsTableName: 'vendor_products',
+      vendorProductsTableName: 'foods',
       reservationsTableName: 'reservations',
       vendorCategoriesTableName: 'categories',
     },

@@ -229,6 +229,30 @@ const HomeScreen = props => {
         </View>
 
         <Text style={styles.title}> {localized('Most Popular')} </Text>
+        <View style={styles.deals}>
+          <View style={styles.carousel}>
+            <Carousel
+              ref={c => {
+                slider1Ref.current = c
+              }}
+              data={categories}
+              renderItem={renderDealItem}
+              sliderWidth={viewportWidth}
+              itemWidth={viewportWidth}
+              // hasParallaxImages={true}
+              inactiveSlideScale={1}
+              inactiveSlideOpacity={1}
+              firstItem={0}
+              loop={false}
+              // loopClonesPerSide={2}
+              autoplay={false}
+              autoplayDelay={500}
+              autoplayInterval={3000}
+              onSnapToItem={index => setActiveSlide(index)}
+            />
+           
+          </View>
+        </View>
       </>
     )
   }
