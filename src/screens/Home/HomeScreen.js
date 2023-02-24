@@ -191,7 +191,7 @@ const HomeScreen = props => {
             keyExtractor={item => `${item.id}`}
           />
         </View>
-        <Text style={styles.title}> {localized('Best Deals')} </Text>
+        {/* <Text style={styles.title}> {localized('Best Deals')} </Text>
         <View style={styles.deals}>
           <View style={styles.carousel}>
             <Carousel
@@ -226,9 +226,9 @@ const HomeScreen = props => {
               tappableDots={!!slider1Ref}
             />
           </View>
-        </View>
+        </View> */}
 
-        <Text style={styles.title}> {localized('Most Popular')} </Text>
+        <Text style={styles.title}> {localized('Popular Items')} </Text>
         <View style={styles.deals}>
           <View style={styles.carousel}>
             <Carousel
@@ -250,9 +250,21 @@ const HomeScreen = props => {
               autoplayInterval={3000}
               onSnapToItem={index => setActiveSlide(index)}
             />
-           
+           <Pagination
+              dotsLength={categories?.length}
+              activeDotIndex={activeSlide}
+              containerStyle={styles.paginationContainer}
+              dotColor="rgba(255, 255, 255, 0.92)"
+              dotStyle={styles.paginationDot}
+              inactiveDotColor="white"
+              inactiveDotOpacity={0.4}
+              inactiveDotScale={0.6}
+              carouselRef={slider1Ref}
+              tappableDots={!!slider1Ref}
+            />
           </View>
         </View>
+        <Text style={styles.title}> {localized('Local Dispensaries')} </Text>
       </>
     )
   }

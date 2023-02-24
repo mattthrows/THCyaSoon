@@ -1,7 +1,7 @@
 import React, { useState, useLayoutEffect } from 'react'
 import { View, Text, FlatList, TouchableOpacity, Image } from 'react-native'
 import FastImage from 'react-native-fast-image'
-import { useTheme } from 'dopenative'
+import { useTheme, useTranslations } from 'dopenative'
 import dynamicStyles from './styles'
 import IMRatingReview from '../../components/IMRatingReview/IMRatingReview'
 import IMVendorFilterModal from '../../components/IMVendorFilterModal/IMVendorFilterModal'
@@ -14,6 +14,7 @@ function IMVendorsScreen({
   containerStyle,
   contentContainerStyle,
 }) {
+  const { localized } = useTranslations()
   const { theme, appearance } = useTheme()
   const styles = dynamicStyles(theme, appearance)
 
@@ -79,7 +80,7 @@ function IMVendorsScreen({
             source={{ uri: item.photo }}
           />
           <View style={styles.foodInfo}>
-            <Text style={styles.foodName}>{item.title}</Text>
+            <Text style={styles.foodName}>{item.name}</Text>
           </View>
           <Text
             onPress={() => onViewFilter(item.filters)}

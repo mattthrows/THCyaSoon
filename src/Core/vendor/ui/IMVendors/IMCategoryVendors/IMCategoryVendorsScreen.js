@@ -10,23 +10,34 @@ export function IMCategoryVendorsScreen({ route, navigation }) {
 
   const { localized } = useTranslations()
 
-  const [foods, setVendors] = useState([])
+  const [vendorList, setVendors] = useState([])
 
   useEffect(() => {
-    let vendorCategoryList = vendors.filter(
-      vendorItem => vendorItem.categoryID === category?.id,
-    )
+    let vendorCategoryList = []
+    
+    vendors?.forEach(vendorItem => {
+      vendorItem.foods?.forEach(foodItem => {
+        if (foodItem.categoryID === category?.id) {
+          // check if vendor is already in the list
+          if (!vendorCategoryList.includes(vendorItem)) {
+            vendorCategoryList.push(vendorItem)
+          }
+        }}
+      )
+    })
+    
     setVendors(vendorCategoryList)
   }, [category, vendors])
 
   useLayoutEffect(() => {
+    const title = route?.params?.category;
     navigation.setOptions({
       headerTitle: route?.params?.category
-        ? `${route?.params?.category.title}`
+        ? `${route?.params?.category.name}`
         : localized('Home'),
       headerRight: () => <View />,
     })
   }, [navigation])
 
-  return <IMVendorsScreen navigation={navigation} vendors={foods} />
+  return <IMVendorsScreen navigation={navigation} vendors={vendorList} />
 }

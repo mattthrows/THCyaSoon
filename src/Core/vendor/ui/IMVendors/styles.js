@@ -16,7 +16,7 @@ const dynamicStyles = (theme, appearance) => {
       shadowRadius: 1,
       borderColor: '#000',
       borderRadius: 5,
-      backgroundColor: colorSet.primaryBackground,
+      backgroundColor: 'white',
     },
     foodPhoto: {
       width: '100%',
@@ -53,6 +53,14 @@ const dynamicStyles = (theme, appearance) => {
       height: 25,
       tintColor: colorSet.primaryForeground,
       marginHorizontal: 5,
+    },
+    title: {
+      marginTop: 20,
+      marginLeft: 5,
+      fontWeight: 'bold',
+      color: theme.colors[appearance].primaryText,
+      fontSize: 20,
+      marginBottom: 15,
     },
   })
 }

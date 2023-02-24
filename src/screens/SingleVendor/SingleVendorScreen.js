@@ -59,7 +59,7 @@ function SingleVendorScreen(props) {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: vendor?.title || category?.title,
+      title: vendor?.name || category?.title,
       headerRight: () => <View />,
     })
 
@@ -104,14 +104,14 @@ function SingleVendorScreen(props) {
   }, [ref])
 
   const onCollectionUpdate = querySnapshot => {
-    const vendorProducts = []
-    querySnapshot?.forEach(doc => {
-      vendorProducts.push({
-        id: doc.id,
-        ...doc.data(),
-      })
-    })
-    setData(vendorProducts)
+    // const vendorProducts = []
+    // querySnapshot?.forEach(doc => {
+    //   vendorProducts.push({
+    //     id: doc.id,
+    //     ...doc.data(),
+    //   })
+    // })
+    setData(vendor.foods === undefined ? [] : vendor.foods)
     setLoading(false)
   }
 
