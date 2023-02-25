@@ -17,7 +17,7 @@ import Hamburger from '../../components/Hamburger/Hamburger'
 import { overrideCart, setCartVendor } from '../../Core/cart/redux/actions'
 import { firebase } from '../../Core/api/firebase/config'
 import IMVendorFilterModal from '../../components/FilterModal/FilterModal'
-import { setVendors, setPopularProducts } from '../../Core/vendor/redux'
+import { setVendors, setPopularProducts, setCategories } from '../../Core/vendor/redux'
 import { useProducts } from '../../api'
 import PopularProductsListView from './PopularProductsListView/PopularProductsListView'
 import { useVendors, useCategories } from '../../Core/vendor/api'
@@ -89,6 +89,12 @@ const HomeScreen = props => {
       dispatch(setVendors(vendors))
     }
   }, [vendors])
+
+  useEffect(() => {
+    if (categories) {
+      dispatch(setCategories(categories))
+    }
+  }, [categories])
 
   const navToMap = (vendors, navigation) => {
     if (vendors.length > 0 || vendors !== undefined) {

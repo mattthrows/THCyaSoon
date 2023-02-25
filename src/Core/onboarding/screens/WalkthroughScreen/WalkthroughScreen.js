@@ -41,20 +41,41 @@ const WalkthroughScreen = props => {
     })
   }, [navigation])
 
-  const _renderItem = ({ item, dimensions }) => (
-    <View style={[styles.container, dimensions]}>
-      <Image
-        style={styles.image}
-        source={item.image}
-        size={100}
-        color="white"
-      />
-      <View>
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.text}>{item.text}</Text>
+  const _renderItem = ({ item, dimensions }) => {
+    const caption = item.text
+    const icon = item.image
+    return (
+      <View style={styles.container}>
+        <View style={styles.logo}>
+          <Image
+            style={styles.logoImage}
+            source={
+              props.delayedMode ? theme.icons.delayedLogo : icon
+            }
+          />
+        </View>
+        {/* <Text style={styles.title}>
+          {title ? title : config.onboardingConfig.welcomeTitle}
+        </Text> */}
+        <Text style={styles.caption}>
+          {caption ? caption : config.onboardingConfig.welcomeCaption}
+        </Text>
       </View>
-    </View>
-  )
+    )
+
+    // <View style={[styles.container, dimensions]}>
+    //   <Image
+    //     style={styles.image}
+    //     source={item.image}
+    //     size={100}
+    //     color="white"
+    //   />
+    //   <View>
+    //     {/* <Text style={styles.title}>{item.title}</Text> */}
+    //     <Text style={styles.caption}>{item.text}</Text>
+    //   </View>
+    // </View>
+      }
 
   const _renderNextButton = () => {
     return <Text style={styles.button}>{localized('Next')}</Text>

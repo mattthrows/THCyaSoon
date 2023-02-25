@@ -35,9 +35,12 @@ const dynamicStyles = (theme, appearance) => {
       flex: 1,
     },
     title: {
-      fontSize: 16,
+      marginTop: 20,
+      marginLeft: 5,
+      fontWeight: 'bold',
       color: theme.colors[appearance].primaryText,
-      fontWeight: '500',
+      fontSize: 20,
+      marginBottom: 15,
     },
     reserveButton: {
       color: theme.colors[appearance].primaryForeground,
@@ -53,7 +56,7 @@ const dynamicStyles = (theme, appearance) => {
     },
     price: {
       fontSize: 16,
-      color: theme.colors[appearance].primaryText,
+      color: theme.colors[appearance].secondaryText,
       marginTop: 10,
     },
     rightIcon: {

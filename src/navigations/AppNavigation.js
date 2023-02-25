@@ -58,6 +58,7 @@ const MainNavigation = () => {
       screenOptions={({ navigation }) => ({
         headerTitleStyle: {
           fontFamily: 'FallingSkyCond',
+          color: theme.colors[appearance].foregroundContrast,
         },
         headerStyle: {
           backgroundColor: theme.colors[appearance].primaryBackground,
@@ -274,6 +275,7 @@ const styles = StyleSheet.create({
   headerRight: {
     flexDirection: 'row',
     alignItems: 'center',
+    color: 'white',
   },
   mapImage: { width: 25, height: 25 },
 })

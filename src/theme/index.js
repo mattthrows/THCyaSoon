@@ -4,7 +4,7 @@ const HORIZONTAL_SPACING_BASE = Platform.OS === 'web' ? 4 : 2
 const VERTICAL_SPACING_BASE = 4
 
 const icons = {
-  logo: require('../assets/icons/restaurant-menu.png'),
+  logo: require('../assets/icons/smokesignallogo.png'),
   menuHamburger: require('../assets/icons/hamburger-menu-icon.png'),
   playButton: require('../assets/icons/play-button.png'),
   close: require('../assets/icons/close-x-icon.png'),
@@ -26,13 +26,13 @@ const icons = {
 }
 
 const lightColors = {
-  primaryBackground: '#f5f5f5',
-  secondaryBackground: '#ffffff',
-  primaryForeground: '#5ea23a',
+  primaryBackground: '#212121',
+  secondaryBackground: '#3b3b3b',
+  primaryForeground: '#BAF1D2',
   secondaryForeground: '#5ea23a',
   foregroundContrast: 'white',
-  primaryText: '#555555',
-  secondaryText: '#7e7e7e',
+  primaryText: '#BAF1D2',
+  secondaryText: 'white',
   hairline: '#e0e0e0',
   grey0: '#fafafa',
   grey3: '#f5f5f5',
@@ -48,7 +48,7 @@ const InstamobileTheme = {
     dark: {
       primaryBackground: '#111111',
       secondaryBackground: '#000000',
-      primaryForeground: '#5ea23a',
+      primaryForeground: '#BAF1D2',
       secondaryForeground: '#8442bd',
       foregroundContrast: 'white',
       primaryText: '#aaaaaa',

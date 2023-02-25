@@ -54,7 +54,7 @@ const SingleItemDetail = props => {
       tempCart.quantity = quantity + tempCart.quantity
       dispatch(updateCart(tempCart, indexAlreadyInCart))
       dispatch(setCartVendor(vendor))
-      dispatch(storeCartToDisk(cartItems, vendor))
+      storeCartToDisk(cartItems, vendor)
       close && close()
       return
     }

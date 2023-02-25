@@ -96,7 +96,7 @@ const dynamicStyles = (theme, appearance) => {
       shadowRadius: 1,
       borderColor: '#000',
       borderRadius: 5,
-      backgroundColor: theme.colors[appearance].primaryBackground,
+      backgroundColor: theme.colors[appearance].secondaryBackground,
     },
     mapImage: { width: 25, height: 25 },
     headerRight: {
@@ -130,7 +130,7 @@ const dynamicStyles = (theme, appearance) => {
       marginTop: 20,
       marginLeft: 5,
       fontWeight: 'bold',
-      color: theme.colors[appearance].primaryText,
+      color: theme.colors[appearance].primaryForeground,
       fontSize: 20,
       marginBottom: 15,
     },
@@ -202,7 +202,7 @@ const dynamicStyles = (theme, appearance) => {
       borderRadius: 5,
       padding: 10,
       marginLeft: 10,
-      backgroundColor: theme.colors[appearance].primaryForeground,
+      backgroundColor: theme.colors[appearance].secondaryBackground,
     },
     actionButtonText: {
       color: theme.colors[appearance].primaryBackground,

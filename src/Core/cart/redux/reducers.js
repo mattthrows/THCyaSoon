@@ -4,6 +4,7 @@ import AsyncStorage from '@react-native-community/async-storage'
 const initialState = {
   cartItems: [],
   vendor: null,
+  categories: [],
 }
 
 export const cart = (state = initialState, action) => {

@@ -11,7 +11,7 @@ const dynamicStyles = (theme, colorScheme) => {
       backgroundColor: colorSet.primaryBackground,
     },
     logo: {
-      width: 150,
+      width: 250,
       height: 150,
       justifyContent: 'center',
       alignItems: 'center',
@@ -22,7 +22,7 @@ const dynamicStyles = (theme, colorScheme) => {
       width: '100%',
       height: '100%',
       resizeMode: 'contain',
-      tintColor: colorSet.primaryForeground,
+      // tintColor: colorSet.primaryForeground,
     },
     title: {
       fontSize: 30,
@@ -37,7 +37,7 @@ const dynamicStyles = (theme, colorScheme) => {
       paddingHorizontal: 30,
       marginBottom: 20,
       textAlign: 'center',
-      color: colorSet.secondaryText,
+      color: colorSet.foregroundContrast,
     },
     loginContainer: {
       width: '70%',

@@ -16,7 +16,7 @@ const dynamicStyles = (theme, appearance) => {
       shadowRadius: 1,
       borderColor: '#000',
       borderRadius: 5,
-      backgroundColor: 'white',
+      backgroundColor: colorSet.secondaryBackground,
     },
     foodPhoto: {
       width: '100%',

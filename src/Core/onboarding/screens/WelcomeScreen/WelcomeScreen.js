@@ -114,9 +114,9 @@ const WelcomeScreen = props => {
           }
         />
       </View>
-      <Text style={styles.title}>
+      {/* <Text style={styles.title}>
         {title ? title : config.onboardingConfig.welcomeTitle}
-      </Text>
+      </Text> */}
       <Text style={styles.caption}>
         {caption ? caption : config.onboardingConfig.welcomeCaption}
       </Text>
