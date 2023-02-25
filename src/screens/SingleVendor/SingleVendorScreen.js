@@ -1,10 +1,10 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
-import { FlatList, Image, TouchableOpacity, View, Text } from 'react-native'
+import { FlatList, Image, TouchableOpacity, View, Text, Modal } from 'react-native'
 import PropTypes from 'prop-types'
 import { useTheme, useTranslations } from 'dopenative'
 import { firebase } from '../../Core/api/firebase/config'
 import { TNEmptyStateView } from '../../Core/truly-native'
-import Modal from 'react-native-modal'
+// import Modal from 'react-native-modal'
 import SingleItemDetail from '../SingleItemDetail/SingleItemDetailScreen'
 import dynamicStyles from './styles'
 import { storeCartToDisk } from '../../Core/cart/redux/reducers'
@@ -159,7 +159,7 @@ function SingleVendorScreen(props) {
         swipeDirection="down"
         onModalHide={async () => storeCartToDisk(cartItems, cartVendor)}
         onSwipeComplete={() => setIsVisible(false)}
-        isVisible={isVisible}>
+        visible={isVisible}>
         <SingleItemDetail
           close={() => setIsVisible(false)}
           vendor={vendor}

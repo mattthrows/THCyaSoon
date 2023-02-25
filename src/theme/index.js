@@ -27,7 +27,7 @@ const icons = {
 
 const lightColors = {
   primaryBackground: '#212121',
-  secondaryBackground: '#5B5B5B',
+  secondaryBackground: '#3b3b3b',
   primaryForeground: '#BAF1D2',
   secondaryForeground: '#5ea23a',
   foregroundContrast: 'white',
