@@ -33,9 +33,9 @@ export const ConfigProvider = ({ children }) => {
       vendorCategoriesTableName: 'categories',
     },
     onboardingConfig: {
-      welcomeTitle: localized('Welcome to InstaEats'),
+      welcomeTitle: localized('Welcome to SmokeSignal'),
       welcomeCaption: localized(
-        'Order food from our restaurant and make reservations in real-time.',
+        'Order THC products from local merchants in Minnesota',
       ),
       walkthroughScreens: [
         {

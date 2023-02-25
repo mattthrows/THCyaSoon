@@ -82,11 +82,6 @@ function IMVendorsScreen({
           <View style={styles.foodInfo}>
             <Text style={styles.foodName}>{item.name}</Text>
           </View>
-          <Text
-            onPress={() => onViewFilter(item.filters)}
-            style={styles.description}>
-            Outdoor Seats, Free WIFI
-          </Text>
           <IMRatingReview
             onPressReview={() => onPressReview(item)}
             number={count}

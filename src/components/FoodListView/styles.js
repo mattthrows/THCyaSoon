@@ -7,7 +7,7 @@ const styles = (theme, appearance) => {
       marginTop: 20,
       marginLeft: 5,
       fontWeight: 'bold',
-      color: theme.colors[appearance].primaryText,
+      color: theme.colors[appearance].secondaryText,
       fontSize: 20,
       marginBottom: 15,
     },
@@ -15,7 +15,7 @@ const styles = (theme, appearance) => {
       paddingTop: 5,
     },
     description: {
-      color: theme.colors[appearance].primaryText,
+      color: theme.colors[appearance].secondaryText,
       width: 200,
       fontSize: 12,
       flex: 1
@@ -28,7 +28,7 @@ const styles = (theme, appearance) => {
     },
     price: {
       fontSize: 16,
-      color: theme.colors[appearance].primaryText,
+      color: theme.colors[appearance].secondaryText,
       marginTop: 10,
     },
     rightIcon: {
@@ -50,21 +50,22 @@ const styles = (theme, appearance) => {
       shadowRadius: 1,
       borderColor: '#000',
       borderRadius: 5,
-      backgroundColor: 'white',
+      backgroundColor: colorSet.secondaryBackground,
     },
     foodName: {
       flex: 1,
       fontWeight: 'bold',
       textAlign: 'left',
-      color: colorSet.primaryText,
+      color: colorSet.secondaryText,
       fontSize: 15,
       marginVertical: 4,
+      width: 250,
     },
     foodPrice: {
       flex: 1,
       fontWeight: 'bold',
       textAlign: 'right',
-      color: colorSet.primaryText,
+      color: colorSet.secondaryText,
     },
   })
 }

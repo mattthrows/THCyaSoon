@@ -20,7 +20,7 @@ const dynamicStyles = (theme, appearance) => {
     },
     title: {
       fontWeight: 'bold',
-      color: theme.colors[appearance].primaryText,
+      color: theme.colors[appearance].primaryForeground,
       fontSize: 25,
       marginVertical: 12,
     },
@@ -41,7 +41,7 @@ const dynamicStyles = (theme, appearance) => {
     description: {
       marginTop: 20,
       fontWeight: 'bold',
-      color: theme.colors[appearance].primaryText,
+      color: theme.colors[appearance].foregroundContrast,
     },
     buttonSetContainer: {
       marginTop: 20,
@@ -57,7 +57,7 @@ const dynamicStyles = (theme, appearance) => {
     count: {
       padding: 10,
       marginTop: 2,
-      color: theme.colors[appearance].primaryText,
+      color: theme.colors[appearance].foregroundContrast,
       fontWeight: 'bold',
       fontWeight: 'bold',
       textAlign: 'center',
@@ -67,7 +67,7 @@ const dynamicStyles = (theme, appearance) => {
       width: 50,
     },
     buttonText: {
-      color: theme.colors[appearance].primaryText,
+      color: theme.colors[appearance].foregroundContrast,
     },
     price: {
       alignSelf: 'center',
@@ -78,7 +78,7 @@ const dynamicStyles = (theme, appearance) => {
       fontWeight: 'bold',
       padding: 10,
       textAlign: 'center',
-      color: theme.colors[appearance].primaryText,
+      color: theme.colors[appearance].foregroundContrast,
       borderColor: theme.colors[appearance].grey3,
     },
     actionContainer: {

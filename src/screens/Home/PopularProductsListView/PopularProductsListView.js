@@ -24,7 +24,7 @@ function PopularProductsListView({ renderListHeader }) {
       <TouchableOpacity onPress={() => onPress(product)}>
         <View style={styles.productItemContainer}>
           <FastImage
-            placeholderColor={theme.colors[appearance].grey9}
+            placeholderColor={theme.colors[appearance].secondaryBackground}
             style={styles.productPhoto}
             source={{ uri: product.photo }}
           />

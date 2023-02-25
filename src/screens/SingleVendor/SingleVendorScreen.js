@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
-import { FlatList, Image, TouchableOpacity, View } from 'react-native'
+import { FlatList, Image, TouchableOpacity, View, Text } from 'react-native'
 import PropTypes from 'prop-types'
 import { useTheme, useTranslations } from 'dopenative'
 import { firebase } from '../../Core/api/firebase/config'
@@ -11,6 +11,7 @@ import { storeCartToDisk } from '../../Core/cart/redux/reducers'
 import { useSelector } from 'react-redux'
 import FoodListView from '../../components/FoodListView/FoodListView'
 import { useConfig } from '../../config'
+import { useCategories } from '../../Core/vendor/api'
 
 function SingleVendorScreen(props) {
   const { localized } = useTranslations()
@@ -40,6 +41,8 @@ function SingleVendorScreen(props) {
 
   const cartItems = useSelector(state => state.cart.cartItems)
   const cartVendor = useSelector(state => state.cart.vendor)
+  const categories = useSelector(state => state.vendor.categories)
+
 
   // const ref = useRef(null);
 
@@ -103,15 +106,35 @@ function SingleVendorScreen(props) {
     }
   }, [ref])
 
-  const onCollectionUpdate = querySnapshot => {
-    // const vendorProducts = []
-    // querySnapshot?.forEach(doc => {
-    //   vendorProducts.push({
-    //     id: doc.id,
-    //     ...doc.data(),
-    //   })
-    // })
-    setData(vendor.foods === undefined ? [] : vendor.foods)
+  const onCollectionUpdate = () => {
+    // group vendor products by category
+    const filteredItems = []
+    if(vendor?.foods?.length > 0) {
+      vendor.foods.forEach(food => {
+        const categoryId = food.categoryID
+        let index = -1
+        for(i = 0; i < categories.length; i++) {
+
+          if(categories[i].id === categoryId) {
+            index = i
+            break
+          }
+        }
+        // check if category exists in filteredItems
+        const categoryIndex = filteredItems.findIndex(item => item.categoryId === categoryId)
+        if(categoryIndex === -1) {
+          filteredItems.push({
+            categoryId: categoryId,
+            categoryName: categories[index].name,
+            foods: [food]
+          })
+        }
+        else {
+          filteredItems[categoryIndex].foods.push(food)
+        }
+      })
+    }
+    setData(filteredItems)
     setLoading(false)
   }
 
@@ -123,6 +146,7 @@ function SingleVendorScreen(props) {
   const renderItem = ({ item }) => (
     <FoodListView food={item} onPress={onPress} />
   )
+
   return (
     <View style={styles.container}>
       {data.length === 0 && !loading && (
@@ -144,12 +168,28 @@ function SingleVendorScreen(props) {
       </Modal>
       <FlatList
         data={data}
-        renderItem={renderItem}
+        renderItem={({ item }) => (
+          <View>
+                <View>
+                  <Text style={styles.title}> {item.categoryName} </Text>
+                  <FlatList
+                    data={item.foods}
+                    renderItem={renderItem}
+                    keyExtractor={item => `${item.id}`}
+                    initialNumToRender={5}
+                    refreshing={refreshing}
+                    showsVerticalScrollIndicator={false}
+                  />  
+                </View>
+          </View>
+        )}
         keyExtractor={item => `${item.id}`}
         initialNumToRender={5}
         refreshing={refreshing}
         showsVerticalScrollIndicator={false}
-      />
+      />  
+     
+     
     </View>
   )
 }

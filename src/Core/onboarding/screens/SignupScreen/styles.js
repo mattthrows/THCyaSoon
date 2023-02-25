@@ -70,6 +70,9 @@ const dynamicStyles = (theme, colorScheme) => {
     signupText: {
       color: colorSet.primaryBackground,
     },
+    signupTextWithPhoneText: {
+      color: colorSet.primaryForeground,
+    },
     image: {
       width: '100%',
       height: '100%',

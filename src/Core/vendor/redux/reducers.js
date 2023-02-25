@@ -1,7 +1,8 @@
-import { SET_VENDORS, SET_POPULAR_PRODUCTS } from './actions'
+import { SET_VENDORS, SET_POPULAR_PRODUCTS, SET_CATEGORIES } from './actions'
 
 const initialState = {
   vendors: [],
+  categories: [],
 }
 
 export const vendor = (state = initialState, action) => {
@@ -15,6 +16,11 @@ export const vendor = (state = initialState, action) => {
       return {
         ...state,
         popularProducts: action.data,
+      }
+      case SET_CATEGORIES:
+      return {
+        ...state,
+        categories: action.data,
       }
     default:
       return state

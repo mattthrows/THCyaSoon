@@ -33,7 +33,10 @@ const dynamicStyles = (theme, colorScheme) => {
       alignSelf: 'center',
     },
     loginText: {
-      color: '#ffffff',
+      color: colorSet.primaryBackground,
+    },
+    loginWithPhoneText: {
+      color: colorSet.primaryForeground,
     },
     placeholder: {
       color: 'red',
@@ -44,7 +47,7 @@ const dynamicStyles = (theme, colorScheme) => {
       borderColor: colorSet.grey3,
       backgroundColor: colorSet.primaryBackground,
       paddingLeft: 20,
-      color: colorSet.primaryText,
+      color: colorSet.primaryForeground,
       width: '80%',
       alignSelf: 'center',
       marginTop: 20,
@@ -89,6 +92,7 @@ const dynamicStyles = (theme, colorScheme) => {
     forgotPasswordText: {
       fontSize: 14,
       padding: 4,
+      color: colorSet.primaryForeground,
     },
     backArrowStyle: {
       resizeMode: 'contain',

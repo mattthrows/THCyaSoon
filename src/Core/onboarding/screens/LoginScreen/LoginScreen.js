@@ -232,6 +232,7 @@ const LoginScreen = props => {
         {config.isSMSAuthEnabled && (
           <Button
             containerStyle={styles.phoneNumberContainer}
+            style={styles.loginWithPhoneText}
             onPress={() => navigation.navigate('Sms', { isSigningUp: false })}>
             {localized('Login with phone number')}
           </Button>

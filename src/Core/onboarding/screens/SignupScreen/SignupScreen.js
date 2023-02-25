@@ -209,6 +209,7 @@ const SignupScreen = props => {
             <Text style={styles.orTextStyle}>{localized('OR')}</Text>
             <Button
               containerStyle={styles.PhoneNumberContainer}
+              style={styles.signupTextWithPhoneText}
               onPress={() => navigation.navigate('Sms', { isSigningUp: true })}>
               {localized('Sign up with phone number')}
             </Button>

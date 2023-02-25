@@ -18,7 +18,7 @@ const dynamicStyles = (theme, appearance) => {
     },
     searchInput: {
       fontSize: 14,
-      color: colorSet.primaryText,
+      color: colorSet.primaryForeground,
       backgroundColor:
         Platform.OS === 'ios' ? colorSet.primaryBackground : colorSet.grey0,
       flex: 1,

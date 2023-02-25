@@ -31,7 +31,7 @@ export default function FoodListView({ food, onPress }) {
           source={{ uri: food.photo }}
         />
         <View style={styles.foodInfo}>
-          <Text style={styles.foodName}>{food.name}</Text>
+          <Text numberOfLines={1} style={styles.foodName}>{food.name}</Text>
           <Text numberOfLines={3} style={styles.description}>{food.description}</Text>
           <Text style={styles.price}>{food.price && "$" + food.price}</Text>
         </View>
