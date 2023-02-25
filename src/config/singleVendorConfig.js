@@ -39,35 +39,35 @@ export const ConfigProvider = ({ children }) => {
       ),
       walkthroughScreens: [
         {
-          icon: require('../assets/icons/restaurant-menu.png'),
+          icon: require('../assets/icons/smokesignallogo.png'),
           title: localized('Welcome to InstaEats'),
           description: localized(
-            'Log in and order delicious food from our restaurant.',
+            'Log in and order THC products from local merchants in Minnesota',
           ),
         },
         {
-          icon: require('../assets/icons/delivery-icon.png'),
+          icon: require('../assets/icons/icons8-transport-256.png'),
           title: localized('Order Food'),
           description: localized(
-            'Hungry? Order food in just a few clicks and we bring it to you...',
+            'Out of your favorites? We got you covered.',
           ),
         },
         {
-          icon: require('../assets/icons/calendar-grid-icon.png'),
+          icon: require('../assets/icons/icons8-minnesota-250.png'),
           title: localized('Reorder and Reserve'),
           description: localized(
-            'Reorder in one click. Reserve a table in a few seconds.',
+            'Support local businesses, and get product delivered to your doorstep.',
           ),
         },
         {
-          icon: require('../assets/icons/binoculars.png'),
+          icon: require('../assets/icons/icons8-marijuana-256.png'),
           title: localized('Order Status'),
           description: localized(
             'Monitor the status of your order directly in the app.',
           ),
         },
         {
-          icon: require('../assets/icons/apple.png'),
+          icon: require('../assets/icons/icons8-agreement-256.png'),
           title: localized('Seamless Payments'),
           description: localized(
             'Pay with your credit cards, Apple Pay or Android Pay, with one click.',
