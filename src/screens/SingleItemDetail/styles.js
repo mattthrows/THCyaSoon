@@ -47,12 +47,15 @@ const dynamicStyles = (theme, appearance) => {
       marginTop: 20,
       alignItems: 'center',
       justifyContent: 'center',
+      
     },
     buttonSet: {
       flexDirection: 'row',
       borderWidth: 1,
       borderRadius: 25,
-      borderColor: theme.colors[appearance].grey6,
+      color: theme.colors[appearance].secondaryText,
+      backgroundColor: theme.colors[appearance].primaryBackground,
+      borderColor: theme.colors[appearance].primaryForeground,
     },
     count: {
       padding: 10,
@@ -78,8 +81,9 @@ const dynamicStyles = (theme, appearance) => {
       fontWeight: 'bold',
       padding: 10,
       textAlign: 'center',
-      color: theme.colors[appearance].foregroundContrast,
-      borderColor: theme.colors[appearance].grey3,
+      color: theme.colors[appearance].secondaryText,
+      backgroundColor: theme.colors[appearance].primaryBackground,
+      borderColor: theme.colors[appearance].primaryForeground,
     },
     actionContainer: {
       flexDirection: 'row',

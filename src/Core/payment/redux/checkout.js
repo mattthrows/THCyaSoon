@@ -146,10 +146,10 @@ const checkoutInitialState = {
   paymentMethod: 'apple',
   currentOrderId: '',
   paymentMethods: [
-    cashOnDelivery,
-    cardPayment,
     nativePaymentMethod,
     paypalPayment,
+    cardPayment,
+    cashOnDelivery,
   ],
   selectedPaymentMethod: nativePaymentMethod,
 }

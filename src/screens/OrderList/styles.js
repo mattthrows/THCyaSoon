@@ -43,7 +43,7 @@ const dynamicStyles = (theme, appearance) => {
       paddingTop: 2,
       paddingBottom: 2,
       textAlign: 'center',
-      color: theme.colors[appearance].primaryForeground,
+      color: theme.colors[appearance].secondaryText,
       backgroundColor: theme.colors[appearance].primaryBackground,
       borderColor: theme.colors[appearance].primaryForeground,
       borderWidth: 1,
@@ -59,7 +59,7 @@ const dynamicStyles = (theme, appearance) => {
     title: {
       flex: 1,
       padding: 10,
-      color: theme.colors[appearance].primaryText,
+      color: theme.colors[appearance].secondaryText,
       fontWeight: 'bold',
       fontWeight: 'bold',
       textAlign: 'left',

@@ -85,6 +85,13 @@ const useCartManager = appConfig => {
       status: 'Order Placed',
       paymentStatus,
       address: shippingAddress,
+      driver: {
+        firstName: "John Doe",
+        carName: "Toyota Camry",
+        carNumber: "123456",
+        carColor: "White", 
+        profilePictureURL: ""
+      }
     }
 
     if (vendor?.id) {
