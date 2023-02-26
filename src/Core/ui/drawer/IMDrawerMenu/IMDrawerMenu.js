@@ -89,11 +89,6 @@ const IMDrawerMenu = props => {
           {mappingMenuItems}
           {lowerMenu}
         </View>
-        <View style={styles.footer}>
-          <Text style={styles.textFooter}>
-            {localized('Made by Instamobile')}
-          </Text>
-        </View>
       </View>
     </View>
   )

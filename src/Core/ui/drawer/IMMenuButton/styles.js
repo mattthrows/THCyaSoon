@@ -9,13 +9,13 @@ const dynamicStyles = (theme, appearance) => {
       padding: 5,
       marginTop: 0,
       marginBottom: 0,
-      backgroundColor: colorSet.grey0,
+      backgroundColor: colorSet.primaryBackground,
     },
     btnContainer: {
       flex: 1,
       flexDirection: 'row',
       alignItems: 'flex-start',
-      backgroundColor: colorSet.grey0,
+      backgroundColor: colorSet.primaryBackground,
       padding: 7,
     },
     btnIcon: {
@@ -23,11 +23,12 @@ const dynamicStyles = (theme, appearance) => {
       height: 30,
       width: 30,
       marginRight: 20,
+      
     },
     btnText: {
       fontWeight: 'bold',
       marginTop: 5,
-      color: colorSet.primaryText,
+      color: colorSet.secondaryText,
     },
   })
 }
