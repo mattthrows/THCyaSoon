@@ -22,7 +22,7 @@ const dynamicStyles = (theme, appearance) => {
       borderBottomWidth: 1,
     },
     optionTile: {
-      color: colorSet.primaryForeground,
+      color: colorSet.secondaryText,
       fontSize: 14,
       fontWeight: '900',
     },
@@ -33,7 +33,7 @@ const dynamicStyles = (theme, appearance) => {
     },
     container: {
       flex: 1,
-      backgroundColor: colorSet.grey0,
+      backgroundColor: colorSet.primaryBackground,
     },
     actionButtonContainer: {
       padding: 16,
@@ -47,7 +47,7 @@ const dynamicStyles = (theme, appearance) => {
     },
     actionButtonText: {
       fontWeight: 'bold',
-      color: 'white',
+      color: colorSet.accentText,
     },
   })
 }

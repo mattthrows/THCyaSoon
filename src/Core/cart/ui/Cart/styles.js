@@ -44,7 +44,7 @@ const styles = (theme, appearance) => {
     title: {
       flex: 1,
       padding: 10,
-      color: colorSet.primaryText,
+      color: colorSet.secondaryText,
       fontWeight: 'bold',
       fontWeight: 'bold',
       textAlign: 'left',
@@ -56,7 +56,7 @@ const styles = (theme, appearance) => {
     },
     actionButtonText: {
       fontWeight: 'bold',
-      color: 'white',
+      color: colorSet.accentText,
     },
     emptyViewContainer: {
       marginTop: '25%',

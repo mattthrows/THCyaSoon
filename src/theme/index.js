@@ -33,6 +33,7 @@ const lightColors = {
   foregroundContrast: 'white',
   primaryText: '#BAF1D2',
   secondaryText: 'white',
+  accentText: '#212121',
   hairline: '#e0e0e0',
   grey0: '#fafafa',
   grey3: '#f5f5f5',

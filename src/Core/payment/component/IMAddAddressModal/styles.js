@@ -34,7 +34,7 @@ const dynamicStyles = (theme, appearance) => {
       fontWeight: 'bold',
     },
     textInput: {
-      color: colorSet.primaryText,
+      color: colorSet.secondaryText,
       width: w(50),
       textAlign: 'left',
       flex: 3,
@@ -58,7 +58,7 @@ const dynamicStyles = (theme, appearance) => {
     },
     actionButtonText: {
       fontWeight: 'bold',
-      color: 'white',
+      color: colorSet.accentText,
       fontSize: 14,
     },
   })
