@@ -30,7 +30,7 @@ const dynamicStyles = (theme, appearance) => {
       flex: 1,
       fontWeight: 'bold',
       textAlign: 'left',
-      color: colorSet.primaryText,
+      color: colorSet.secondaryText,
       fontSize: 15,
       marginVertical: 4,
     },
