@@ -47,7 +47,7 @@ const dynamicStyles = (theme, colorScheme) => {
       borderColor: colorSet.grey3,
       backgroundColor: colorSet.primaryBackground,
       paddingLeft: 20,
-      color: colorSet.primaryForeground,
+      color: colorSet.secondaryText,
       width: '80%',
       alignSelf: 'center',
       marginTop: 20,

@@ -6,12 +6,12 @@ const dynamicStyles = (theme, appearance) => {
   return StyleSheet.create({
     content: {
       flex: 1,
-      backgroundColor: colorSet.grey0,
+      backgroundColor: colorSet.primaryBackground,
     },
     header: {
       height: Platform.OS === 'ios' ? '23%' : '29%',
       marginTop: Platform.OS === 'ios' ? 50 : 0,
-      backgroundColor: Platform.OS === 'ios' ? colorSet.grey0 : '#3066d1',
+      backgroundColor: colorSet.primaryBackground,
       justifyContent: 'center',
     },
 
@@ -21,6 +21,7 @@ const dynamicStyles = (theme, appearance) => {
       fontWeight: 'bold',
       marginLeft: '10%',
       paddingTop: 7,
+      
     },
     email: {
       color: Platform.OS === 'ios' ? colorSet.primaryText : 'white',
@@ -41,6 +42,7 @@ const dynamicStyles = (theme, appearance) => {
       marginLeft: '8%',
       shadowOpacity: 0.1,
       overflow: 'hidden',
+      backgroundColor: colorSet.primaryBackground,
       // ...Platform.select({
       //   ios: {
       //     marginTop: '20%',
@@ -55,6 +57,7 @@ const dynamicStyles = (theme, appearance) => {
     container: {
       marginTop: '5%',
       marginLeft: '5%',
+      backgroundColor: colorSet.primaryBackground,
     },
     line: {
       borderBottomColor: colorSet.grey9,

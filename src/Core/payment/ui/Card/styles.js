@@ -17,7 +17,7 @@ const dynamicStyles = (theme, appearance) => {
       opacity: 0.7,
     },
     cardText: {
-      color: colorSet.primaryForeground,
+      color: colorSet.secondaryText,
     },
     tick: {
       width: 20,
@@ -31,7 +31,7 @@ const dynamicStyles = (theme, appearance) => {
     },
     actionButtonText: {
       fontWeight: 'bold',
-      color: 'white',
+      color: colorSet.accentText,
     },
     container: {
       flex: 1,

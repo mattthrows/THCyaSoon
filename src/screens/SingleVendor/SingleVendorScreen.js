@@ -1,10 +1,10 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
-import { FlatList, Image, TouchableOpacity, View, Text, Modal } from 'react-native'
+import { FlatList, Image, TouchableOpacity, View, Text } from 'react-native'
 import PropTypes from 'prop-types'
 import { useTheme, useTranslations } from 'dopenative'
 import { firebase } from '../../Core/api/firebase/config'
 import { TNEmptyStateView } from '../../Core/truly-native'
-// import Modal from 'react-native-modal'
+import Modal from 'react-native-modal'
 import SingleItemDetail from '../SingleItemDetail/SingleItemDetailScreen'
 import dynamicStyles from './styles'
 import { storeCartToDisk } from '../../Core/cart/redux/reducers'
@@ -12,6 +12,7 @@ import { useSelector } from 'react-redux'
 import FoodListView from '../../components/FoodListView/FoodListView'
 import { useConfig } from '../../config'
 import { useCategories } from '../../Core/vendor/api'
+import ShoppingCartButton from '../../components/ShoppingCartButton/ShoppingCartButton'
 
 function SingleVendorScreen(props) {
   const { localized } = useTranslations()
@@ -69,30 +70,14 @@ function SingleVendorScreen(props) {
     if (config.isMultiVendorEnabled) {
       navigation.setOptions({
         headerRight: () => (
-          <View style={styles.iconContainer}>
-            <TouchableOpacity
-              onPress={() =>
-                navigation.navigate('ReservationScreen', {
-                  vendor: vendor,
-                })
-              }>
-              <Image
-                style={styles.icon}
-                source={require('../../assets/icons/reservation.png')}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() =>
-                navigation.navigate('Reviews', {
-                  entityID: vendor.id,
-                })
-              }>
-              <Image
-                style={styles.icon}
-                source={require('../../assets/icons/review.png')}
-              />
-            </TouchableOpacity>
-          </View>
+          <View style={styles.headerRight}>
+          
+          <ShoppingCartButton
+            onPress={() => {
+              navigation.navigate('Cart')
+            }}
+          />
+        </View>
         ),
       })
     }
@@ -159,7 +144,7 @@ function SingleVendorScreen(props) {
         swipeDirection="down"
         onModalHide={async () => storeCartToDisk(cartItems, cartVendor)}
         onSwipeComplete={() => setIsVisible(false)}
-        visible={isVisible}>
+        isVisible={isVisible}>
         <SingleItemDetail
           close={() => setIsVisible(false)}
           vendor={vendor}
