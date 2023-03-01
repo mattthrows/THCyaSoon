@@ -9,18 +9,16 @@ const dynamicStyles = (theme, appearance) => {
       marginVertical: 4,
       flexDirection: 'row',
       height: 40,
-      backgroundColor: colorSet.primaryBackground,
+      backgroundColor: colorSet.grey3,
     },
     cancelButtonText: {
-      color: colorSet.primaryForeground,
+      color: 'black',
       fontSize: 16,
       marginBottom: 5,
     },
     searchInput: {
       fontSize: 14,
-      color: colorSet.primaryForeground,
-      backgroundColor:
-        Platform.OS === 'ios' ? colorSet.primaryBackground : colorSet.grey0,
+      color: 'black',
       flex: 1,
     },
   })

@@ -14,7 +14,7 @@ const useSearchProducts = searchedText => {
     setLoading(true)
     unsubscribeFromSearchedProducts.current?.()
     unsubscribeFromSearchedProducts.current = subscribeToSearchedProductsAPI(
-      config.tables?.vendorProductsTableName,
+      config.tables?.vendorsTableName,
       onSearchedProductsUpdate,
     )
     return () => {
@@ -31,15 +31,26 @@ const useSearchProducts = searchedText => {
           ...doc,
         })
       } else {
-        const { name } = doc
-        const text = searchedText != null ? searchedText?.toLowerCase() : ''
-        const index = name.toLowerCase().search(text)
-        if (index !== -1) {
-          vendorProducts.push({
-            id: doc.id,
-            ...doc,
-          })
-        }
+        doc.foods.forEach(food => {
+          const name = food.name
+          const text = searchedText != null ? searchedText?.toLowerCase() : ''
+          const index = name.toLowerCase().search(text)
+          if (index !== -1) {
+
+            // see if vendor exists in array
+            const curFoodIndex = vendorProducts.findIndex(item => item.id === doc.id)
+
+            if(curFoodIndex !== -1) {
+              vendorProducts[curFoodIndex].foods.findIndex(item => item.id === food.id) === -1 && vendorProducts[curFoodIndex].foods.push(food)
+            } else {
+              vendorProducts.push({
+                id: doc.id,
+                name: doc.name,
+                foods: [food],
+              })
+            }
+          }
+        })
       }
     })
 

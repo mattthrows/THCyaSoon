@@ -10,7 +10,10 @@ const dynamicStyles = (theme, appearance) => {
       flex: 1,
     },
     searchContainer: {
-      width: 200,
+      width:  250,
+      backgroundColor: colorSet.grey3,
+      marginTop: 7,
+      borderRadius: 10,
     },
     modalContainer: {
       justifyContent: 'flex-end',
@@ -21,6 +24,14 @@ const dynamicStyles = (theme, appearance) => {
     headerRight: {
       flexDirection: 'row',
       alignItems: 'center',
+    },
+    title: {
+      marginTop: 20,
+      marginLeft: 5,
+      fontWeight: 'bold',
+      color: theme.colors[appearance].primaryText,
+      fontSize: 20,
+      marginBottom: 15,
     },
   })
 }

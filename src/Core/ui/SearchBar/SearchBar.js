@@ -38,14 +38,13 @@ export default function SearchBar(props) {
         onChangeText={onSearchTextChange}
         onSearchButtonPress={onSearch}
         showsCancelButton={true}
-        searchBarStyle="minimal"
+        // searchBarStyle="minimal"
         cancelButtonText={localized('Cancel')}
         style={styles.searchInput}
-        showsCancelButtonWhileEditing={true}
+        // showsCancelButtonWhileEditing={true}
         onCancelButtonPress={onCancel}
         onSearchClear={onSearchClear}
-        tintColor={theme.colors[appearance].primaryForeground}
-        textColor={theme.colors[appearance].primaryText}
+        textColor={'black'}
       />
     </View>
   )

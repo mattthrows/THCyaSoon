@@ -1,5 +1,5 @@
 import React, { useState, useRef, useLayoutEffect, useEffect } from 'react'
-import { FlatList, Keyboard, View } from 'react-native'
+import { FlatList, Keyboard, Text, View } from 'react-native'
 import { useTheme } from 'dopenative'
 import PropTypes from 'prop-types'
 import Hamburger from '../../components/Hamburger/Hamburger'
@@ -92,9 +92,24 @@ function SearchScreen(props) {
       </Modal>
       <FlatList
         data={products}
-        renderItem={renderItem}
+        renderItem={({ item }) => (
+          <View>
+                <View>
+                  <Text style={styles.title}> {item.name} </Text>
+                  <FlatList
+                    data={item.foods}
+                    renderItem={renderItem}
+                    keyExtractor={item => `${item.id}`}
+                    initialNumToRender={5}
+                    showsVerticalScrollIndicator={false}
+                  />  
+                </View>
+          </View>
+        )}
         keyExtractor={item => `${item.id}`}
-      />
+        initialNumToRender={5}
+        showsVerticalScrollIndicator={false}
+      />  
     </View>
   )
 }
