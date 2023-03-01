@@ -109,11 +109,11 @@ export const ConfigProvider = ({ children }) => {
             icon: theme.icons.shop,
             navigationPath: 'Home',
           },
-          {
-            title: localized('CUISINES'),
-            icon: theme.icons.menu,
-            navigationPath: 'CategoryList',
-          },
+          // {
+          //   title: localized('CUISINES'),
+          //   icon: theme.icons.menu,
+          //   navigationPath: 'CategoryList',
+          // },
           {
             title: localized('SEARCH'),
             icon: theme.icons.search,
@@ -124,11 +124,11 @@ export const ConfigProvider = ({ children }) => {
             icon: theme.icons.cart,
             navigationPath: 'Cart',
           },
-          {
-            title: localized('reservationsTableName'),
-            icon: theme.icons.reserve,
-            navigationPath: 'ReservationHistoryScreen',
-          },
+          // {
+          //   title: localized('reservationsTableName'),
+          //   icon: theme.icons.reserve,
+          //   navigationPath: 'ReservationHistoryScreen',
+          // },
           {
             title: localized('PROFILE'),
             icon: theme.icons.profile,

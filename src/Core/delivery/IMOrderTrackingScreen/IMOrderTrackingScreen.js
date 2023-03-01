@@ -9,16 +9,18 @@ import IMDeliveryView from '../IMDelivery/IMDeliveryView'
 import FastImage from 'react-native-fast-image'
 import { getDirections, getETA } from '../api/directions'
 import { useDeliverConfig } from '../hooks/useDeliveryConfig'
+// import singleVendorconfig from '../../config/singleVendorConfig'
+import { useConfig } from '../../../config/singleVendorConfig'
 
 export default function IMOrderTrackingScreen({ navigation, route }) {
   const { localized } = useTranslations()
   const { theme, appearance } = useTheme()
   const styles = dynamicStyles(theme, appearance)
 
-  const { config } = useDeliverConfig()
+  const config = useConfig()
 
   const item = route.params.item
-  const [eta, setEta] = useState(0)
+  const [eta, setEta] = useState(25)
   const [region, setRegion] = useState(null)
   const [routeCoordinates, setRouteCoordinates] = useState([])
 
@@ -203,23 +205,11 @@ export default function IMOrderTrackingScreen({ navigation, route }) {
 
   const etaString =
     eta > 0
-      ? (deliveryDate.getHours() < 10
-          ? '0' + deliveryDate.getHours()
-          : deliveryDate.getHours()) +
-        ':' +
-        (deliveryDate.getMinutes() < 10
-          ? '0' + deliveryDate.getMinutes()
-          : deliveryDate.getMinutes())
+      ? new Date(deliveryDate).toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
       : ''
   var latestArrivalString =
     eta > 0
-      ? (latestArrivalDate.getHours() < 10
-          ? '0' + latestArrivalDate.getHours()
-          : latestArrivalDate.getHours()) +
-        ':' +
-        (latestArrivalDate.getMinutes() < 10
-          ? '0' + latestArrivalDate.getMinutes()
-          : latestArrivalDate.getMinutes())
+      ? new Date(latestArrivalDate).toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
       : ''
 
   const tempIndex = stages.indexOf(order.status)
@@ -228,28 +218,7 @@ export default function IMOrderTrackingScreen({ navigation, route }) {
   return (
     <ScrollView style={styles.scroll}>
       <View style={styles.container}>
-        {order.status == 'Order Completed' ? (
-          <View style={styles.upperPane}>
-            <Text style={styles.time}>{localized('Order Delivered')}</Text>
-          </View>
-        ) : (
-          <View style={styles.upperPane}>
-            <Text style={styles.time}>{etaString}</Text>
-            <Text style={styles.eta}>{localized('Estimated arrival')}</Text>
-          </View>
-        )}
-
-        {order.status != 'Order Completed' && (
-          <Bar
-            progress={0.25 * (stagesIndex + 1)}
-            color={theme.colors[appearance].primaryForeground}
-            borderWidth={0}
-            width={width - 20}
-            unfilledColor={theme.colors[appearance].grey0}
-            style={styles.bar}
-          />
-        )}
-        <Text style={styles.prepText}>
+      <Text style={styles.prepText}>
           {order.status === 'Order Placed' ||
           order.status == 'Driver Pending' ||
           order.status === 'Driver Accepted' ||
@@ -261,10 +230,39 @@ export default function IMOrderTrackingScreen({ navigation, route }) {
             ? order.driver.firstName + localized(' is picking up your order')
             : ''}
         </Text>
+        {order.status != 'Order Completed' && (
+          <Bar
+            progress={0.25 * (stagesIndex + 1)}
+            color={theme.colors[appearance].primaryForeground}
+            borderWidth={0}
+            width={width - 20}
+            unfilledColor={theme.colors[appearance].grey0}
+            style={styles.bar}
+          />
+        )}
+        {order.status == 'Order Completed' ? (
+          <View style={styles.upperPane}>
+            <Text style={styles.time}>{localized('Order Delivered')}</Text>
+            {/* <Image
+              style={styles.logoImage}
+              source={require('../../../assets/icons/smokesignalicon.png')}
+            /> */}
+          </View>
+        ) : (
+          <View style={styles.upperPane}>
+            <Text style={styles.eta}>
+              {localized('Estimated arrival:')} {" "}
+              <Text style={styles.etaTime}>{etaString}</Text>
+            </Text>
+          </View>
+        )}
         {order.status !== 'Order Completed' && (
-          <Text style={styles.eta}>
-            {localized('Latest arrival by')} {latestArrivalString}
-          </Text>
+          <View style={styles.upperPane}>
+            <Text style={styles.eta}>
+              {localized('Latest arrival by:')} {" "}
+              <Text style={styles.etaTime}>{latestArrivalString}</Text>
+            </Text>
+          </View>
         )}
         {stagesIndex == 0 && (
           <FastImage

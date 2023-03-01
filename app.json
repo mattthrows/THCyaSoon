@@ -1,6 +1,6 @@
 {
-  "name": "Instamobile",
-  "displayName": "Instamobile",
+  "name": "SmokeSignal",
+  "displayName": "SmokeSignal",
   "plugins": [
     "expo-tracking-transparency",
     "@react-native-google-signin/google-signin"

@@ -7,6 +7,7 @@ const styles = (theme, appearance) => {
   return StyleSheet.create({
     container: {
       flex: 1,
+      height: '100%',
       backgroundColor: colorSet.primaryBackground,
       paddingTop: 10,
     },
@@ -17,14 +18,14 @@ const styles = (theme, appearance) => {
       margin: 16,
     },
     subMainTitle: {
-      color: colorSet.secondaryText,
+      color: colorSet.primaryText,
       fontSize: 14,
       marginHorizontal: 16,
       marginBottom: 4,
       fontWeight: 'bold',
     },
     subText: {
-      color: colorSet.primaryText,
+      color: colorSet.secondaryText,
       fontSize: 16,
       marginHorizontal: 16,
     },
@@ -43,12 +44,12 @@ const styles = (theme, appearance) => {
     },
     divider: {
       width: '100%',
-      height: 8,
+      height: 2,
       backgroundColor: colorSet.grey0,
       marginTop: 15,
     },
     horizontalPane: {
-      margin: 8,
+      // margin: 8,
       marginLeft: 16,
       flexDirection: 'row',
       justifyContent: 'space-between',
@@ -65,17 +66,25 @@ const styles = (theme, appearance) => {
       alignItems: 'center',
     },
     qty: {
-      padding: 4,
-      backgroundColor: '#EDEEED',
-      marginRight: 16,
-      borderRadius: 3,
-      fontSize: 14,
-      width: 20,
+      alignSelf: 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontWeight: 'bold',
+      paddingLeft: 7,
+      paddingRight: 7,
+      paddingTop: 2,
+      paddingBottom: 2,
       textAlign: 'center',
+      color: theme.colors[appearance].secondaryText,
+      backgroundColor: theme.colors[appearance].primaryBackground,
+      borderColor: theme.colors[appearance].primaryForeground,
+      borderWidth: 1,
+      borderRadius: 3,
+      marginRight: 16
     },
     productItem: {
       fontSize: 16,
-      color: colorSet.primaryText,
+      color: colorSet.secondaryText,
       marginTop: -1,
     },
     totalText: {
@@ -199,6 +208,12 @@ const styles = (theme, appearance) => {
       width: w(100),
       elevation: 4,
       shadowOffset: { width: 4, height: 4 },
+    },
+    logoImage: {
+      width: '50%',
+      height: '50%',
+      resizeMode: 'contain',
+      // tintColor: colorSet.primaryForeground,
     },
   })
 }

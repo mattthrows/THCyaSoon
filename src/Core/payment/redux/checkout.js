@@ -20,7 +20,8 @@ const icons = {
   americanExpress: require('../assets/american-express.png'),
   dinersClub: require('../assets/diners-club.png'),
   discover: require('../assets/discover.png'),
-  mastercard: require('../assets/mastercard.png'),
+  googlePay: require('../assets/google-pay.png'),
+  applePay: require('../assets/apple-pay.png'),
   cashOnDelivery: require('../assets/cod.png'),
   paypal: require('../assets/paypal.png'),
 }
@@ -29,7 +30,7 @@ const nativePaymentMethod = {
   title: Platform.OS === 'ios' ? 'Apple Pay' : 'Google Pay',
   key: Platform.OS === 'ios' ? 'apple' : 'google',
   last4: Platform.OS === 'ios' ? 'Apple Pay' : 'Google Pay',
-  iconSource: icons.mastercard,
+  iconSource: Platform.OS === 'ios' ? icons.applePay : icons.googlePay,
   isNativePaymentMethod: true,
 }
 

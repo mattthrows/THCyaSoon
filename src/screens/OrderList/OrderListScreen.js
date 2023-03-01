@@ -65,7 +65,7 @@ const OrderListScreen = props => {
           )}
         <View style={styles.overlay} />
         <Text style={styles.headerTitle}>
-          {item?.createdAt ? new Date(item.createdAt).toDateString() : ''} -{' '}
+          {item?.createdAt ? new Date(Date.now()).toDateString() : ''} -{' '}
           {item.status}
         </Text>
       </View>

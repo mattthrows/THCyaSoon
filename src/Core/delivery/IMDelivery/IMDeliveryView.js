@@ -47,7 +47,7 @@ export default function IMDeliveryView({ navigation, order, style }) {
         <Icon name="options-vertical" type="simple-line-icon" />
       ),
       headerStyle: {
-        backgroundColor: '#f5e9e9',
+        backgroundColor: '#212121',
       },
     })
   }, [navigation])
@@ -98,15 +98,20 @@ export default function IMDeliveryView({ navigation, order, style }) {
       {order.driver !== undefined &&
         order.status !== 'Order Completed' &&
         renderDriver(order.driver)}
-      <Text style={styles.sectionTitle}>{localized('Delivery Details')}</Text>
-      <Text style={styles.subMainTitle}>{localized('Address')}</Text>
-      <Text style={styles.subText}>
-        {`${order.address.line1} ${order.address.line2}, ${order.address.city} ${order.address.postalCode}, ${order.address.country}`}
-      </Text>
-      <View style={styles.line} />
-      <Text style={styles.subMainTitle}>{localized('Type')}</Text>
-      <Text style={styles.subText}>Deliver to door</Text>
-      <View style={styles.divider} />
+        {order.status !== 'Order Completed' &&
+          <>
+            <Text style={styles.sectionTitle}>{localized('Delivery Details')}</Text>
+            <Text style={styles.subMainTitle}>{localized('Address')}</Text>
+            <Text style={styles.subText}>
+              {`${order.address.line1} ${order.address.line2}, ${order.address.city} ${order.address.postalCode}, ${order.address.country}`}
+            </Text>
+            <View style={styles.line} />
+            <Text style={styles.subMainTitle}>{localized('Type')}</Text>
+            <Text style={styles.subText}>Deliver to door</Text>
+            <View style={styles.divider} />
+          </>
+        }
+      
       <Text style={styles.sectionTitle}>{localized('Order Summary')}</Text>
       <View style={styles.horizontalPane}>
         <Text style={styles.vendorTitle}>
@@ -153,7 +158,7 @@ export default function IMDeliveryView({ navigation, order, style }) {
           />
         </View>
       </View> */}
-      <View style={styles.divider} />
+      {/* <View style={styles.divider} /> */}
     </View>
   )
 }
